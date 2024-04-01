@@ -21,6 +21,6 @@ int main(void){
 	robot.attack("Dani");
 	robot.attack("Dani");
 	robot.attack("Yoseph");
-	robot.takeDamage(1000);
-	robot.takeDamage(1000);
+	robot.takeDamage(10000);
+	robot.takeDamage(10000);
 }
