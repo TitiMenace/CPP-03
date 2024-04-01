@@ -29,9 +29,9 @@ class	Claptrap{
 	private:
 
 		std::string Name;
-		int			Hitpoints = 10;
-		int			Energy_points = 10;
-		int			Attack_damage = 0;
+		int			Hitpoints;
+		int			Energy_points;
+		int			Attack_damage;
 };
 
 #endif
