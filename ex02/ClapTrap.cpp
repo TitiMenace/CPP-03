@@ -62,7 +62,7 @@ ClapTrap::~ClapTrap(void){
 }
 
 void	ClapTrap::attack(const std::string &target){
-	
+
 	if (Hitpoints <= 0){
 
 		std::cout << "ClapTrap is dead, lying on the floor, sadly..." << std::endl;
