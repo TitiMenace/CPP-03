@@ -1,11 +1,11 @@
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void){
 
-	ScavTrap	robot("Serge");
+	FragTrap	robot("Serge");
 
-	robot.guardGate();
+	robot.highFivesGuys();
 
 	robot.attack("Ismael");
 	robot.attack("Dani");

@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap(void){
 
-	std::cout << " ClapTrap Default Constructor Called" << std::endl;
+	std::cout << "ClapTrap Default Constructor Called" << std::endl;
 	
 	Hitpoints = 10;
 	Energy_points = 10;
