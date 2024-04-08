@@ -1,5 +1,16 @@
-#include "ScavTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/08 13:46:13 by tschecro          #+#    #+#             */
+/*   Updated: 2024/04/08 13:46:16 by tschecro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name){
 
@@ -52,7 +63,7 @@ void	ScavTrap::attack(const std::string &target){
 
 	if (Hitpoints <= 0){
 
-		std::cout << "ScavTrap is dead, lying on the floor, sadly..." << std::endl;
+		std::cout << "ScavTrap " << this->Name << " is dead, lying on the floor, sadly..." << std::endl;
 		return;
 	}
 	if (this->Energy_points >= 1){
@@ -68,8 +79,16 @@ void	ScavTrap::attack(const std::string &target){
 
 void	ScavTrap::guardGate(void){
 
-	std::cout << "ScavTrap is now in Gate Keeper mode" << std::endl;
+	if (Hitpoints <= 0){
 
+		std::cout << "ScavTrap " << this->Name << " is dead, lying on the floor, sadly..." << std::endl;
+		return;
+	}
+	if (this->Energy_points >= 1){
+		std::cout << "ScavTrap " << this->Name << " is now in Gate Keeper mode" << std::endl;
+	}
+	else
+		std::cout <<  "ScavTrap " << this->Name << " has no more energy, sad..." << std::endl;
 	return;
 }
 

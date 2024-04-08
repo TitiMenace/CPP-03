@@ -6,16 +6,15 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 20:11:21 by tschecro          #+#    #+#             */
-/*   Updated: 2024/03/26 20:31:50 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:45:50 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-
 ClapTrap::ClapTrap(void){
 
-	std::cout << "ClapTrap Default Constructor Called" << std::endl;
+	std::cout << " ClapTrap Default Constructor Called" << std::endl;
 	
 	Hitpoints = 10;
 	Energy_points = 10;
@@ -62,10 +61,10 @@ ClapTrap::~ClapTrap(void){
 }
 
 void	ClapTrap::attack(const std::string &target){
-
+	
 	if (Hitpoints <= 0){
 
-		std::cout << "ClapTrap is dead, lying on the floor, sadly..." << std::endl;
+		std::cout << "ClapTrap " << this->Name << " is dead, lying on the floor, sadly..." << std::endl;
 		return;
 	}
 	if (this->Energy_points >= 1){
@@ -82,14 +81,18 @@ void	ClapTrap::takeDamage(unsigned int amount){
 
 	if (Hitpoints <= 0){
 
-		std::cout << "ClapTrap is dead, lying on the floor, sadly..." << std::endl;
+		std::cout << "ClapTrap " << this->Name << " is dead, lying on the floor, sadly..." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << this->Name << " loses ";
-	std::cout << amount << " hit points" << std::endl;
-	this->Hitpoints -= amount;
-	if (this->Hitpoints <= 0)
-		std::cout << "ClapTrap " << this->Name << " has no more hit points. He's Dead..." << std::endl;
+	if (this->Energy_points > 0){
+		std::cout << "ClapTrap " << this->Name << " loses ";
+		std::cout << amount << " hit points" << std::endl;
+		this->Hitpoints -= amount;
+		if (this->Hitpoints <= 0)
+			std::cout << "ClapTrap " << this->Name << " has no more hit points. He's Dead..." << std::endl;
+	}
+	else
+		std::cout <<  "ClapTrap " << this->Name << " has no more energy, sad..." << std::endl;
 	return;
 }
 
@@ -98,7 +101,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	
 	if (Hitpoints <= 0){
 
-		std::cout << "ClapTrap is dead, lying on the floor, sadly..." << std::endl;
+		std::cout << "ClapTrap " << this->Name << " is dead, lying on the floor, sadly..." << std::endl;
 		return;
 	}
 	if (this->Energy_points >= 1){
